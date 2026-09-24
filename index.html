@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="stuGio — Motion Design para marcas e produtos. Vídeos publicitários para campanhas digitais com preço acessível.">
+<title>stuGio — Motion Design</title>
+<style>
+:root{
+  --bg:#080808;--panel:#10100f;--text:#f4f1eb;--muted:#aaa59c;
+  --gold:#d8c0a0;--line:rgba(216,192,160,.20);--max:1280px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:auto;padding:0 34px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(8,8,8,.78);
+backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.07)}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:13px}.brand-logo{width:43px;height:43px;object-fit:cover;border-radius:50%;display:block}
+.brand-name{font-size:22px;letter-spacing:-.045em;font-weight:600}.brand-name span{color:var(--gold)}
+.navlinks{display:flex;gap:34px;font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#c9c5bd}
+.navlinks a:hover{color:#fff}
+
+.hero{min-height:calc(100vh - 82px);padding:115px 0 58px;display:flex;align-items:center;
+background:radial-gradient(circle at 82% 45%,rgba(216,192,160,.10),transparent 28%),
+linear-gradient(110deg,#080808 0%,#0a0a09 55%,#11100e 100%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);gap:72px;align-items:center;width:100%}
+.eyebrow{font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:25px}
+h1{font-size:clamp(50px,6.3vw,88px);line-height:.93;letter-spacing:-.065em;margin:0 0 28px;font-weight:500;max-width:760px}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{max-width:620px;color:#bdb8b0;font-size:17px;line-height:1.65}
+.price-message{
+  display:inline-block;
+  margin:0 0 22px;
+  padding:10px 15px;
+  border:1px solid rgba(216,192,160,.38);
+  background:rgba(216,192,160,.08);
+  color:var(--gold);
+  font-size:clamp(14px,1.35vw,19px);
+  line-height:1.2;
+  letter-spacing:.11em;
+  font-weight:600;
+  text-transform:uppercase;
+  box-shadow:0 10px 35px rgba(216,192,160,.06);
+}
+.actions{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}
+.btn{padding:15px 22px;border:1px solid var(--line);font-size:10px;letter-spacing:.18em;text-transform:uppercase;transition:.2s}
+.btn:hover{border-color:var(--gold)}.btn.primary{background:var(--gold);color:#15120f;border-color:var(--gold)}
+
+.hero-media{justify-self:end;width:min(100%,480px);aspect-ratio:9/16;max-height:72vh;background:#050505;
+border:1px solid rgba(216,192,160,.32);overflow:hidden;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.hero-media:before{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.06);z-index:2;pointer-events:none}
+.hero-media video{width:100%;height:100%;display:block;object-fit:cover}
+
+.section{padding:88px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:45px;margin-bottom:45px}
+.section-kicker{font-size:11px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase}
+h2{font-size:clamp(40px,5vw,68px);letter-spacing:-.055em;font-weight:500;margin:12px 0 0}
+.section-copy{max-width:460px;color:var(--muted);line-height:1.65}
+
+.portfolio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.project{transition:transform .35s ease,border-color .35s ease}.project:hover{transform:translateY(-4px);border-color:rgba(216,192,160,.28)}.media video{transition:transform .6s ease}.project:hover .media video{transform:scale(1.018)}
+.project{background:var(--panel);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+.media{aspect-ratio:16/9;background:#050505;overflow:hidden}
+.media video,.media img{width:100%;height:100%;object-fit:cover;display:block}
+.placeholder{height:100%;display:grid;place-items:center;color:#77736c;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.project-info{padding:22px 24px 25px}.project-title{font-size:18px}.project-type{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-top:8px}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.service{padding:46px 30px;border-right:1px solid var(--line)}.service:last-child{border-right:0}
+.num{font-size:11px;color:var(--gold);letter-spacing:.2em}.service h3{font-size:24px;font-weight:500;margin:44px 0 15px}
+.service p{color:var(--muted);line-height:1.65;margin:0}
+
+.statement{padding:140px 0;text-align:center}.statement p{max-width:950px;margin:auto;font-size:clamp(38px,5.2vw,72px);line-height:1.02;letter-spacing:-.055em}
+.statement span{color:var(--gold)}
+
+.contact{border-top:1px solid var(--line);padding:105px 0}.contact-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.contact h2{max-width:820px}
+
+footer{padding:27px 0 36px;border-top:1px solid rgba(255,255,255,.08);color:#77736c;font-size:11px;letter-spacing:.08em;display:flex;justify-content:space-between}
+
+
+.social-actions{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:850px){
+  .navlinks{display:none}.wrap{padding:0 22px}.hero{padding-top:125px}
+  .hero-grid,.portfolio,.services,.contact-grid{grid-template-columns:1fr}
+  .hero-media{justify-self:start;width:min(100%,390px);max-height:none}
+  .price-message{font-size:13px;letter-spacing:.08em}
+  .section{padding:90px 0}.section-head{display:block}.section-copy{margin-top:22px}
+  .service{border-right:0;border-bottom:1px solid var(--line)}.service:last-child{border-bottom:0}
+  footer{display:block;line-height:1.9}
+}
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><nav>
+<a class="brand" href="#"><img class="brand-logo" src="assets/stugio-logo.png" alt="stuGio logo"><div class="brand-name">stu<span>G</span>io</div></a>
+<div class="navlinks"><a href="#portfolio">Portfólio</a><a href="#services">Serviços</a><a href="https://www.instagram.com/influe.ai/" target="_blank" rel="noopener">Instagram</a></div>
+</nav></div></header>
+
+<main>
+<section class="hero">
+<div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">stuGio / Motion Design</div>
+    <h1>Sua marca merece ser vista de um <em>jeito diferente.</em></h1>
+    <div class="price-message">MUITO MAIS BARATO DO QUE VOCÊ IMAGINA.</div>
+    <p class="lead">Criamos vídeos publicitários e experiências visuais para marcas e produtos.</p>
+    <div class="actions">
+      <a class="btn primary" href="#portfolio">Ver portfólio</a>
+      <a class="btn" href="https://www.instagram.com/influe.ai/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="https://wa.me/5511939552222" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="https://www.tiktok.com/@influe.ai/" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+  <div class="hero-media"><video src="assets/aura_cafe_flagship_motion.mp4" autoplay muted loop playsinline preload="auto"><span>stuGio Motion Design</span></video></div>
+</div>
+</section>
+
+<section class="section" id="portfolio"><div class="wrap">
+<div class="section-head">
+  <div><div class="section-kicker">01 / Portfólio</div><h2>Trabalhos</h2></div>
+  <p class="section-copy">Projetos de publicidade em Motion Design criados para apresentar produtos de forma visual e memorável.</p>
+</div>
+<div class="portfolio">
+  <article class="project"><div class="media"><video src="assets/portfolio/01_pizzaria.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">Pizzaria Forn 27</div><div class="project-type">Publicidade / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/02_purealys.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">Purealys</div><div class="project-type">Skincare / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/03_aura_cafe.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">AURA CAFÉ</div><div class="project-type">Food & Beverage / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/04_velor.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">VÉLOR</div><div class="project-type">Automotive / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/05_powerbank.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">Powerbank</div><div class="project-type">Tech Product / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/06_fashion.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">Fashion</div><div class="project-type">Fashion / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/07_clothing.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">Clothing</div><div class="project-type">Fashion / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/08_estetica.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">Estética</div><div class="project-type">Beauty / Motion Design</div></div></article>
+  <article class="project"><div class="media"><video src="assets/portfolio/09_lumiere.mp4" autoplay muted loop playsinline preload="metadata"></video></div><div class="project-info"><div class="project-title">LUMIÈRE Residence</div><div class="project-type">Luxury Real Estate / Bom Retiro</div></div></article>
+</div>
+</div></section>
+
+<section class="section" id="services"><div class="wrap">
+<div class="section-head"><div><div class="section-kicker">02 / Serviços</div><h2>O que fazemos</h2></div></div>
+<div class="services">
+  <div class="service"><div class="num">01</div><h3>Vídeos Publicitários</h3><p>Vídeos curtos para campanhas digitais, Instagram, TikTok e YouTube.</p></div>
+  <div class="service"><div class="num">02</div><h3>Motion Design</h3><p>Movimento, tipografia, efeitos visuais e animação para destacar produtos e marcas.</p></div>
+  <div class="service"><div class="num">03</div><h3>Conteúdo para Marcas</h3><p>Peças visuais pensadas para apresentar produtos e fortalecer a presença digital.</p></div>
+</div>
+</div></section>
+
+<section class="statement"><div class="wrap"><p>Transformamos produtos e ideias em <span>experiências visuais.</span></p></div></section>
+
+<section class="contact" id="contact"><div class="wrap contact-grid">
+<div><div class="section-kicker">03 / Contato</div><h2>Tem uma marca para mostrar ao mundo?</h2></div>
+<div class="social-actions">
+<a class="btn primary" href="https://wa.me/5511939552222" target="_blank" rel="noopener">WhatsApp →</a>
+<a class="btn" href="https://www.instagram.com/influe.ai/" target="_blank" rel="noopener">Instagram →</a>
+<a class="btn" href="https://www.tiktok.com/@influe.ai/" target="_blank" rel="noopener">TikTok →</a>
+</div>
+</div></section>
+</main>
+
+<footer class="wrap"><span>© 2026 stuGio — Motion Design</span><span><a href="https://www.instagram.com/influe.ai/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@influe.ai/" target="_blank" rel="noopener">TikTok</a> · São Paulo, Brasil</span></footer>
+</body>
+</html>
