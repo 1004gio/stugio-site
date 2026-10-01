@@ -1,11 +1,15 @@
-stuGio — versão V3
+stuGio V4 — atualização do portfólio
 
-Contato principal:
-- Instagram: https://www.instagram.com/influe.ai/
-- TikTok: https://www.tiktok.com/@influe.ai/
-- WhatsApp: +55 11 93955-2222
+Mantém os projetos 01–09 e adiciona 10–13.
+10 — Quadriciclo Elétrico
+11 — Hot Pot
+12 — Louças e Mesa
+13 — Tecidos
 
-E-mail não aparece mais como botão de contato.
+Novidades:
+- Portfólio em Português Brasileiro.
+- Clique em qualquer projeto para abrir o vídeo em visualizador vertical 9:16.
+- O vídeo principal da primeira página troca automaticamente a cada 7 segundos por um vídeo aleatório do portfólio, sem repetir o anterior.
+- Botões do hero: Instagram, TikTok e WhatsApp, com o mesmo tamanho.
 
-Nenhum vídeo ou imagem foi alterado.
-Este ZIP contém somente o código atualizado; mantenha a pasta assets original no mesmo nível do index.html.
+Mantenha a pasta assets original dos projetos 01–09 no mesmo nível do index.html. Os quatro novos vídeos estão incluídos em assets/portfolio/.
