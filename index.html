@@ -73,6 +73,25 @@ body.lang-zh .language-option strong{font-family:'Noto Sans SC',sans-serif;font-
 .video-modal.open{display:flex}
 .video-modal video{width:min(92vw,1200px);max-height:88vh;object-fit:contain;display:block}
 .video-modal-close{position:absolute;top:24px;right:28px;width:44px;height:44px;border:1px solid rgba(216,192,160,.35);background:#111;color:#f5f1e9;font-size:28px;line-height:1;cursor:pointer}
+
+/* First portfolio row: preserve the new 9:16 vertical videos.
+   Rows 2–4 remain exactly in the existing 16:9 layout. */
+.portfolio > .project:nth-child(-n+4) .media{
+  aspect-ratio:9/16;
+  background:#050505;
+}
+.portfolio > .project:nth-child(-n+4) .media video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#050505;
+}
+@media(max-width:850px){
+  .portfolio > .project:nth-child(-n+4) .media{
+    aspect-ratio:9/16;
+  }
+}
+
 </style>
 
 <style>
@@ -279,7 +298,7 @@ pt:{
 nav_portfolio:"Portfólio",nav_services:"Serviços",contact_kicker:"05 / Contato",footer_location:"São Paulo, Brasil",eyebrow:"stuGio / Motion Design",
 hero_title:"Sua marca e seus produtos merecem ser vistos de um <em>jeito diferente.</em>",
 offer_label:"Criação de vídeo a partir de",offer_sub:"",
-lead:"Criamos vídeos publicitários para empresas, marcas e produtos — para Reels, Shorts e redes sociais, com motion design que valoriza sua marca.",btn_portfolio:"Ver portfólio",
+lead:"Motion Design para PRODUTOS, MARCAS e EMPRESAS — criamos vídeos publicitários para Reels, Shorts e Redes Sociais(SNS), transformando ideias em experiências visuais que valorizam sua marca",
 portfolio_kicker:"03 / Portfólio",portfolio_title:"Projetos em Destaque",portfolio_copy:"Projetos de publicidade em Motion Design criados para apresentar produtos de forma visual e memorável.",services_kicker:"04 / Serviços",services_title:"O que fazemos",
 service1_title:"Vídeos Publicitários",service1_text:"Vídeos curtos para campanhas digitais, Instagram, TikTok e YouTube.",
 service2_title:"Motion Design",service2_text:"Movimento, tipografia, efeitos visuais e animação para destacar produtos e marcas.",
